@@ -1,0 +1,88 @@
+@import "reset.css";
+
+:root{
+    --main-light-green:#DCEAE8;
+    --button-dark-green: #5B7E79;
+}
+
+body{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(2,1fr);
+}
+
+#left{
+    width: 50vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+#header{
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+#header>img{
+    padding: 0 30px;
+}
+
+#logo{
+    font-weight: 400;
+    font-size: 3vh;
+}
+
+#content{
+    height: 90vh;
+    width: 30vw;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    place-self: center;
+    align-items: center;
+}
+
+#text{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+}
+
+#main{
+    grid-row: 2/3;
+    font-weight: bold;
+    font-size: 5vh;
+    line-height: 1.2;
+}
+
+#sub{
+    grid-row: -2/-1;
+    font-size: 1rem;
+    color: lightgray;
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: flex-start;
+}
+
+.button{
+    background-color: var(--button-dark-green);
+    height: 6vh;
+    width: 12vw;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+}
+
+#right{
+    display: grid;
+    width: 50vw;;
+    height: 100vh;
+    background-color: var(--main-light-green);
+    place-items: center;
+}
