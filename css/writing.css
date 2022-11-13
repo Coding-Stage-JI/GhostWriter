@@ -1,0 +1,56 @@
+@import "reset.css";
+@import "color.css";
+
+body{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 1fr 14fr;
+    grid-template-columns: 1.2fr 3.8fr 5fr;
+}
+
+/* 헤더 */
+#header{
+    background-color: var(--main-light-green);
+    grid-area: 1/1/2/-1;
+    display: flex;
+    align-items: center;
+}
+#header>img{
+    padding: 0 30px;
+}
+#logo{
+    font-weight: 400;
+    font-size: 3vh;
+}
+
+/* 좌측 카테고리*/
+#categories>h2{
+    padding: 1vh;
+    font-size: 3vh;
+    height: 5vh;  
+}
+#category li{
+    padding: 1vh;
+    font-size: 2vh;
+    
+}
+.hidden{
+    display: none;
+}
+.choosen{
+    background-color: var(--category-dark-green);
+}
+.details{
+    background-color: var(--category-light-green);
+}
+
+/* 가운데 선택창*/
+#select{
+    background-color: rgb(247, 217, 163);
+}
+
+/* 우측 입력창 */
+#writing{
+    background-color: rgb(235, 235, 137);
+}
