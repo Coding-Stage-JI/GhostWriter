@@ -1,12 +1,17 @@
 @import "reset.css";
 @import "color.css";
 
+:root{
+    --button-radius:5px;
+    --radius:7px;
+}
+
 body {
     display: grid;
     width: 100vw;
     height: 100vh;
     grid-template-rows: 1fr 14fr;
-    grid-template-columns: 1.2fr 3.8fr 5fr;
+    grid-template-columns: 1fr 4fr 5fr; 
 }
 
 /* 헤더 */
@@ -46,12 +51,96 @@ body {
 
 /* 가운데 선택창*/
 #select {
+    height: calc(100vh*(14/15));
     background-color: #e7e9eb;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 4.5fr 3.5fr;
+}
+#select>div{
+    padding:10px
+}
+#select p{
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 5px;
 }
 
+/* 제목 */
+#title-form{
+    display:grid;    
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+}
+#title-form>input{
+    grid-area: 2/2/-1/-1;
+}
+
+/* 인사말 */
+#greeting-form{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    place-items: center;
+}
+#greeting-form>input{
+    grid-area: 3/2/-1/-1;
+}
+
+/* 제목 and 인사말 button */
+.button{
+    background-color:var(--button-dark-green);
+    border:0;
+    border-radius: var(--button-radius);
+    color: white;
+    width: 100px;
+    margin:5px 10px 0 0;
+    place-self: end;
+}
+
+/*서론 및 본론*/
+#content{
+    overflow-y: auto;
+}
+#content-list{
+    overflow-y: auto;
+    background-color: var(--background-dark-gray);
+    border-radius: var(--radius);
+    margin: 5px;
+}
 .content-list-box {
     background-color: var(--background-light-white);
-    padding: 5%;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: var(--radius);
     margin:5px;
+}
+
+/* 마무리 및 끝인사 */
+#ending{
+    overflow-y: auto;
+}
+#ending-list{
+    overflow-y: auto;
+    background-color: var(--background-dark-gray);
+    border-radius: var(--radius);
+    margin: 10px;
+}
+.ending-list-box{
+    background-color: var(--background-light-white);
+    padding:5px;
+    border-radius: var(--radius);
+    margin:7px;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #eeeeee;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--background-dark-gray);
+    border-radius: 5px;
 }

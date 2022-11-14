@@ -22,27 +22,40 @@
             <div id="title">
                 <p>제목</p>
                 <form id="title-form">
-                    <label for="subject">과목명</label>
-                    <input type="text" name="subject" id="subject" placeholder="과목명" />
-                    <label for="classNum">분반</label>
-                    <input type="text" name="classNum" id="classNum" placeholder="분반" />
-                    <input type="submit" value="제출">
+                    <span>
+                        <label for="subject">과목명</label>
+                        <input type="text" name="subject" id="subject" placeholder="과목명" />
+                    </span>
+                    <span>
+                        <label for="classNum">분반</label>
+                        <input type="text" name="classNum" id="classNum" placeholder="분반" />
+                    </span>
+                
+                    <input class="button" type="submit" value="제출">
                 </form>
             </div>
         
             <div id="greeting">
                 <p>인사말</p>
                 <form id="greeting-form">
-                    <label for="prof">교수님</label>
-                    <input type="text" name="prof" placeholder="교수님 성함" />
-                    <label for="myName">이름</label>
-                    <input type="text" name="myName" id="myName" placeholder="내 이름" />
-                    <br />
-                    <label for="major">학과</label>
-                    <input type="text" name="major" placeholder="학과" />
-                    <label for="studentNum">학번</label>
-                    <input type="text" name="studentNum" id="studentNum" placeholder="학번" />
-                    <input type="submit" value="제출">
+                    <span>
+                        <label for="prof">교수님</label>
+                        <input type="text" name="prof" placeholder="교수님 성함" />
+                    </span>
+                    <span>
+                        <label for="myName">이름</label>
+                        <input type="text" name="myName" id="myName" placeholder="내 이름" />
+                    </span>
+                    <span>
+                        <label for="major">학과명</label>
+                        <input type="text" name="major" placeholder="학과" />
+                    </span>
+                    <span>
+                        <label for="studentNum">학번</label>
+                        <input type="text" name="studentNum" id="studentNum" placeholder="학번" />
+                    </span>
+                
+                    <input class="button" type="submit" value="제출">
                 </form>
             </div>
         
@@ -51,15 +64,15 @@
                 <div id="content-list">
                     <!-- list로 content 목록 보여주기, overflow: auto;  -->
                 </div>
+            
             </div>
-        
+            
             <div id="ending">
                 <p>마무리 및 끝인사</p>
                 <div id="ending-list">
                     <!-- list로 content 목록 보여주기, overflow: auto;  -->
                 </div>
             </div>
-        
         </div>
 
         <div id="writing">
