@@ -39,12 +39,15 @@ function clickCategory(event) {
     );
 }
 
-/* 세부 항목 선택 시 */
+/* 세부 항목 선택 시 => 서론 및 본론을 띄워야 함*/
 let content_list = document.querySelector("#content-list");
 function clickDetail(event) {
     let parent = event.target.parentNode.previousSibling.innerText;
     let name = event.target.innerText;
     console.log(parent, name);
+
+    removeAllChild(content_list); //서론 및 본론 리스트가 존재하는 경우 삭제
+
     Data.forEach((item) => {
         if (item.category == parent) {
             item.details.forEach((detail) => {
@@ -52,16 +55,24 @@ function clickDetail(event) {
                     console.log(detail.type);
                     console.log(detail.title);
                     console.log(detail.content.length);
+
+                    /* 서론 및 본론 리스트 추가 */
                     detail.content.forEach((text) => {
-                        let box = document.createElement("div");
-                        let insideBox = document.createElement("div");
+                        let box = document.createElement("div"); //텍스트를 감싸는 흰박스
+                        let insideBox = document.createElement("div"); //텍스트
                         insideBox.innerText = text;
                         box.appendChild(insideBox);
-                        box.classList.add("content-list-box");
+                        box.classList.add("content-list-box"); //흰 박스에 클래스 추가
                         content_list.appendChild(box);
                     });
                 }
             });
         }
     });
+}
+
+function removeAllChild(tag){ // tag의 자식 태그 삭제
+    while(tag.hasChildNodes()){
+        tag.removeChild(tag.firstChild);
+    }
 }
