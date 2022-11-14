@@ -1,6 +1,8 @@
-:root{
-    --main-light-green:#DCEAE8;
-    --button-dark-green: #5B7E79;
-    --category-dark-green:#BCCFCC;
-    --category-light-green:#E3EEED;
+:root {
+    --main-light-green: #dceae8;
+    --button-dark-green: #5b7e79;
+    --button-darkdark-green: #3b635d;
+    --category-dark-green: #bccfcc;
+    --category-light-green: #e3eeed;
+    --background-dark-gray: #cfd3d6;
 }
