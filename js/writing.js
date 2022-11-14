@@ -62,6 +62,8 @@ function clickDetail(event) {
             });
         }
     });
+
+    showEndingList();
 }
 
 function removeAllChild(tag){ // tag의 자식 태그 삭제
@@ -70,13 +72,15 @@ function removeAllChild(tag){ // tag의 자식 태그 삭제
     }
 }
 
-/* 마무리 및 끝인사 */
+/* 마무리 및 끝인사 세팅*/
 function showEndingList(){
     let ending_list=document.querySelector("#ending-list");
-    makeBoxAndAppend(Ending,ending_list,"content-list-box"); //일단은 태그를 똑같이 해둠
+    if(ending_list.childElementCount==0){
+        makeBoxAndAppend(Ending,ending_list,"ending-list-box");
+    }
 }
-showEndingList();
 
+/* content와 ending에 태그 만들어서 내용 추가해주는 함수 */
 function makeBoxAndAppend(list, place,className){
     list.forEach((text)=>{
         let box = document.createElement("div"); //텍스트를 감싸는 흰박스
@@ -87,3 +91,31 @@ function makeBoxAndAppend(list, place,className){
         place.appendChild(box);
     })
 }
+
+/* title 제출 시 */
+const titleForm=document.querySelector("#title-form");
+const subject=document.querySelector("#subject");
+const classNum=document.querySelector("#classNum");
+function onTitleSubmit(event){
+    event.preventDefault();
+    console.log(subject.value,classNum.value);
+    localStorage.setItem("subject",subject.value);
+    localStorage.setItem("classNum",classNum.value);
+}
+titleForm.addEventListener("submit",onTitleSubmit);
+
+/* greeting 제출 시 */
+const greetingForm=document.querySelector("#greeting-form");
+const prof=document.querySelector("#prof");
+const myName=document.querySelector("#myName");
+const major=document.querySelector("#major");
+const studentNum=document.querySelector("#studentNum");
+function onGreetingSubmit(event){
+    event.preventDefault();
+    console.log(prof.value,myName.value,major.value,studentNum.value)
+    localStorage.setItem("prof",prof.value);
+    localStorage.setItem("myName",myName.value);
+    localStorage.setItem("major",major.value);
+    localStorage.setItem("studentNum",studentNum.value);
+}
+greetingForm.addEventListener("submit",onGreetingSubmit);
