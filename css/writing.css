@@ -1,7 +1,7 @@
 @import "reset.css";
 @import "color.css";
 
-body{
+body {
     display: grid;
     width: 100vw;
     height: 100vh;
@@ -10,42 +10,47 @@ body{
 }
 
 /* 헤더 */
-#header{
+#header {
     background-color: var(--main-light-green);
     grid-area: 1/1/2/-1;
     display: flex;
     align-items: center;
 }
-#header>img{
+#header > img {
     padding: 0 30px;
 }
-#logo{
+#logo {
     font-weight: 400;
     font-size: 3vh;
 }
 
 /* 좌측 카테고리*/
-#categories>h2{
+#categories > h2 {
     padding: 1vh;
     font-size: 3vh;
-    height: 5vh;  
+    height: 5vh;
 }
-#category li{
+#category li {
     padding: 1vh;
     font-size: 2vh;
-    
 }
-.hidden{
+.hidden {
     display: none;
 }
-.choosen{
+.choosen {
     background-color: var(--category-dark-green);
 }
-.details{
+.details {
     background-color: var(--category-light-green);
 }
 
 /* 가운데 선택창*/
-#select{
-    background-color: #E7E9EB;
+#select {
+    background-color: #e7e9eb;
+}
+
+.content-list-box {
+    background-color: var(--background-light-white);
+    padding: 5%;
+    border-radius: 20px;
 }

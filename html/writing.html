@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GhostWriter</title>
-    <link rel="stylesheet" href="../css/writing.css" />
-  </head>
-  <body>
-    <div id="header">
-      <img src="../src/email_icon_img.png" alt="로고" />
-      <span id="logo">GhostWriter</span>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GhostWriter</title>
+        <link rel="stylesheet" href="../css/writing.css" />
+    </head>
+    <body>
+        <div id="header" onclick="location.href='home.html'">
+            <img src="../src/email_icon_img.png" alt="로고" />
+            <span id="logo">GhostWriter</span>
+        </div>
 
-    <div id="categories">
-      <h2>카테고리</h2>
-      <ul id="category"></ul>
-    </div>
+        <div id="categories">
+            <h2>카테고리</h2>
+            <ul id="category"></ul>
+        </div>
 
-    <div id="select">
-      <ul>
-        <li>
-          <div>
-            <p>제목</p>
-            <label for="subject">과목명</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="과목명"
-            />
-            <label for="classNum">분반</label>
-            <input
-              type="text"
-              name="classNum"
-              id="classNum"
-              placeholder="분반"
-            />
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>인사말</p>
-            <label for="prof">교수님</label>
-            <input type="text" name="prof" placeholder="교수님 성함" />
-            <label for="myName">이름</label>
-            <input
-              type="text"
-              name="myName"
-              id="myName"
-              placeholder="내 이름"
-            />
-            <br />
-            <label for="major">학과</label>
-            <input type="text" name="major" placeholder="학과" />
-            <label for="studentNum">학번</label>
-            <input
-              type="text"
-              name="studentNum"
-              id="studentNum"
-              placeholder="학번"
-            />
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>서론 및 본론</p>
-            <div id="content-list">
-              <!-- list로 content 목록 보여주기, overflow: auto;  -->
+        <div id="select">
+            <ul>
+                <li>
+                    <div>
+                        <p>제목</p>
+                        <label for="subject">과목명</label>
+                        <input
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            placeholder="과목명"
+                        />
+                        <label for="classNum">분반</label>
+                        <input
+                            type="text"
+                            name="classNum"
+                            id="classNum"
+                            placeholder="분반"
+                        />
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>인사말</p>
+                        <label for="prof">교수님</label>
+                        <input
+                            type="text"
+                            name="prof"
+                            placeholder="교수님 성함"
+                        />
+                        <label for="myName">이름</label>
+                        <input
+                            type="text"
+                            name="myName"
+                            id="myName"
+                            placeholder="내 이름"
+                        />
+                        <br />
+                        <label for="major">학과</label>
+                        <input type="text" name="major" placeholder="학과" />
+                        <label for="studentNum">학번</label>
+                        <input
+                            type="text"
+                            name="studentNum"
+                            id="studentNum"
+                            placeholder="학번"
+                        />
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>서론 및 본론</p>
+                        <div id="content-list">
+                            <!-- list로 content 목록 보여주기, overflow: auto;  -->
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>마무리 및 끝인사</p>
+                        <div id="content-list">
+                            <!-- list로 content 목록 보여주기, overflow: auto;  -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="writing">
+            <div id="tab_menu">
+                <ul id="tab_list">
+                    <li id="is_on">
+                        <a href="#text">Text</a>
+                        <div id="text">
+                            <div id="title-box">
+                                <label for="title">제목</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    placeholder="제목"
+                                />
+                            </div>
+                            <div id="greeting-box">
+                                <label for="title">인사말</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    placeholder="인사말"
+                                />
+                            </div>
+                            <div id="body-box">
+                                <label for="title">서론 및 본론</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    placeholder="서론 및 본론"
+                                />
+                            </div>
+                            <div id="closing-box">
+                                <label for="title">마무리 및 끝인사</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    placeholder="마무리 및 끝인사"
+                                />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#preview">Preview</a>
+                        <div id="preview">미리보기</div>
+                    </li>
+                </ul>
             </div>
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>마무리 및 끝인사</p>
-            <div id="content-list">
-              <!-- list로 content 목록 보여주기, overflow: auto;  -->
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+        </div>
 
-    <div id="writing">
-      <div id="tab_menu">
-        <ul id="tab_list">
-          <li id="is_on">
-            <a href="#text">Text</a>
-            <div id="text">
-              <div id="title-box">
-                <label for="title">제목</label>
-                <input type="text" name="title" id="title" placeholder="제목" />
-              </div>
-              <div id="greeting-box">
-                <label for="title">인사말</label>
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="인사말"
-                />
-              </div>
-              <div id="body-box">
-                <label for="title">서론 및 본론</label>
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="서론 및 본론"
-                />
-              </div>
-              <div id="closing-box">
-                <label for="title">마무리 및 끝인사</label>
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="마무리 및 끝인사"
-                />
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="#preview">Preview</a>
-            <div id="preview">미리보기</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <script>
-      const tabList = document.querySelectorAll(".tab_menu .list li");
-      for (var i = 0; i < tabList.length; i++) {
-        tabList[i]
-          .querySelector(".btn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            for (var j = 0; j < tabList.length; j++) {
-              tabList[j].classList.remove("is_on");
+        <script>
+            const tabList = document.querySelectorAll(".tab_menu .list li");
+            for (var i = 0; i < tabList.length; i++) {
+                tabList[i]
+                    .querySelector(".btn")
+                    .addEventListener("click", function (e) {
+                        e.preventDefault();
+                        for (var j = 0; j < tabList.length; j++) {
+                            tabList[j].classList.remove("is_on");
+                        }
+                        this.parentNode.classList.add("is_on");
+                    });
             }
-            this.parentNode.classList.add("is_on");
-          });
-      }
-    </script>
+        </script>
 
-    <script type="module" src="../js/writing.js"></script>
-    <script type="module" src="../js/data.js"></script>
-  </body>
+        <script type="module" src="../js/writing.js"></script>
+        <script type="module" src="../js/data.js"></script>
+    </body>
 </html>
