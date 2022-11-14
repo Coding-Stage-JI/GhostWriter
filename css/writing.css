@@ -47,10 +47,5 @@ body{
 
 /* 가운데 선택창*/
 #select{
-    background-color: rgb(247, 217, 163);
-}
-
-/* 우측 입력창 */
-#writing{
-    background-color: rgb(235, 235, 137);
+    background-color: #E7E9EB;
 }
