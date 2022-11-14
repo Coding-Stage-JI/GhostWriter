@@ -1,5 +1,6 @@
 import { Data, Ending } from "./data.js";
 
+/* 데이터 불러와서 카테고리 생성 */
 let category = document.querySelector("#category");
 Data.forEach((item) => {
     /*카테고리 */
@@ -46,8 +47,8 @@ function clickDetail(event) {
     let name = event.target.innerText;
     console.log(parent, name);
 
-    removeAllChild(content_list); //서론 및 본론 리스트가 존재하는 경우 삭제
-
+    /* 서론 및 본론 리스트가 존재하는 경우 삭제하고 추가해야함 */
+    removeAllChild(content_list);
     Data.forEach((item) => {
         if (item.category == parent) {
             item.details.forEach((detail) => {
@@ -88,34 +89,39 @@ function makeBoxAndAppend(list, place,className){
         insideBox.innerText = text;
         box.appendChild(insideBox);
         box.classList.add(className); //흰 박스에 클래스 추가
+        box.addEventListener("click",clickExample);
         place.appendChild(box);
     })
 }
 
+function clickExample(event){
+    let parent=event.target.parentNode.className;
+    let text=event.target.innerText;
+    if(parent=="content-list-box"){
+        localStorage.setItem("content",text);
+    }else if(parent=="ending-list-box"){
+        localStorage.setItem("ending",text);
+    }
+}
+
 /* title 제출 시 */
 const titleForm=document.querySelector("#title-form");
-const subject=document.querySelector("#subject");
-const classNum=document.querySelector("#classNum");
+const titleItem=titleForm.querySelectorAll("input");
 function onTitleSubmit(event){
     event.preventDefault();
-    console.log(subject.value,classNum.value);
-    localStorage.setItem("subject",subject.value);
-    localStorage.setItem("classNum",classNum.value);
+    localStorage.setItem("subject",titleItem[0].value);
+    localStorage.setItem("classNum",titleItem[1].value);
 }
 titleForm.addEventListener("submit",onTitleSubmit);
 
 /* greeting 제출 시 */
 const greetingForm=document.querySelector("#greeting-form");
-const prof=document.querySelector("#prof");
-const myName=document.querySelector("#myName");
-const major=document.querySelector("#major");
-const studentNum=document.querySelector("#studentNum");
+const greetingItem=greetingForm.querySelectorAll("input");
 function onGreetingSubmit(event){
     event.preventDefault();
-    console.log(prof.value,myName.value,major.value,studentNum.value)
-    localStorage.setItem("prof",prof.value);
-    localStorage.setItem("myName",myName.value);
-    localStorage.setItem("major",major.value);
-    localStorage.setItem("studentNum",studentNum.value);
+    localStorage.setItem("prof",greetingItem[0].value);
+    localStorage.setItem("myName",greetingItem[1].value);
+    localStorage.setItem("major",greetingItem[2].value);
+    localStorage.setItem("studentNum",greetingItem[3].value);
 }
 greetingForm.addEventListener("submit",onGreetingSubmit);
