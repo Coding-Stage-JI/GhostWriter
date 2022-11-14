@@ -38,6 +38,9 @@ function clickCategory(event) {
     event.target.nextElementSibling.childNodes.forEach((item) =>
         item.classList.remove("hidden")
     );
+
+    /* localStorage에 카테고리 저장 */
+    localStorage.setItem("category",event.target.innerText);
 }
 
 /* 세부 항목 선택 시 => 서론 및 본론을 띄워야 함*/
@@ -45,7 +48,9 @@ let content_list = document.querySelector("#content-list");
 function clickDetail(event) {
     let parent = event.target.parentNode.previousSibling.innerText;
     let name = event.target.innerText;
-    console.log(parent, name);
+    
+    /* localStorage에 세부항목 저장 */
+    localStorage.setItem("detailName",name);
 
     /* 서론 및 본론 리스트가 존재하는 경우 삭제하고 추가해야함 */
     removeAllChild(content_list);
@@ -53,10 +58,6 @@ function clickDetail(event) {
         if (item.category == parent) {
             item.details.forEach((detail) => {
                 if (detail.name == name) {
-                    console.log(detail.type);
-                    console.log(detail.title);
-                    console.log(detail.content.length);
-
                     /* 서론 및 본론 리스트 추가 */
                     makeBoxAndAppend(detail.content,content_list,"content-list-box");
                 }
@@ -99,8 +100,14 @@ function clickExample(event){
     let text=event.target.innerText;
     if(parent=="content-list-box"){
         localStorage.setItem("content",text);
+        const textContent=document.querySelector("#textContent");
+        textContent.value=text.replace("SUBJECT",`${localStorage.getItem("subject")}(${localStorage.getItem("classNum")})`);
     }else if(parent=="ending-list-box"){
         localStorage.setItem("ending",text);
+        const textEnding=document.querySelector("#textEnding");
+        textEnding.value=`${text}
+
+${localStorage.getItem("myName")} 올림`;
     }
 }
 
@@ -109,8 +116,25 @@ const titleForm=document.querySelector("#title-form");
 const titleItem=titleForm.querySelectorAll("input");
 function onTitleSubmit(event){
     event.preventDefault();
-    localStorage.setItem("subject",titleItem[0].value);
-    localStorage.setItem("classNum",titleItem[1].value);
+    const subject=titleItem[0].value;
+    const classNum=titleItem[1].value;
+
+    localStorage.setItem("subject",subject);
+    localStorage.setItem("classNum",classNum);
+
+    const textTitle=document.querySelector("#textTitle");
+    Data.forEach((item)=>{
+        if(item.category==localStorage.getItem("category")){
+            item.details.forEach((detail)=>{
+                if(detail.name==localStorage.getItem("detailName")){
+                    let text=detail.title;
+                    textTitle.value=text.replace("SUBJECT",`${subject}(${classNum})`);
+                }
+            })
+        }
+    })
+    
+    
 }
 titleForm.addEventListener("submit",onTitleSubmit);
 
@@ -119,9 +143,19 @@ const greetingForm=document.querySelector("#greeting-form");
 const greetingItem=greetingForm.querySelectorAll("input");
 function onGreetingSubmit(event){
     event.preventDefault();
-    localStorage.setItem("prof",greetingItem[0].value);
-    localStorage.setItem("myName",greetingItem[1].value);
-    localStorage.setItem("major",greetingItem[2].value);
-    localStorage.setItem("studentNum",greetingItem[3].value);
+    const prof=greetingItem[0].value;
+    const myName=greetingItem[1].value;
+    const major=greetingItem[2].value;
+    const studentNum=greetingItem[3].value;
+
+    localStorage.setItem("prof",prof);
+    localStorage.setItem("myName",myName);
+    localStorage.setItem("major",major);
+    localStorage.setItem("studentNum",studentNum);
+
+    const textGreeting=document.querySelector("#textGreeting");
+    let text=`안녕하세요 ${prof} 교수님.
+${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목을 수강하고 있는 ${major} ${studentNum} ${myName}입니다.`
+    textGreeting.value=text;
 }
 greetingForm.addEventListener("submit",onGreetingSubmit);

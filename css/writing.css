@@ -132,6 +132,17 @@ body {
     margin:7px;
 }
 
+/* 우측 글 쓰는 곳*/
+#text label{
+    display: block;
+}
+#text input{
+    width: 40vw;
+}
+textarea{
+    width: 40vw;;
+}
+
 /* 스크롤바 */
 ::-webkit-scrollbar {
     width: 5px;
