@@ -1,4 +1,4 @@
-import { Data } from "./data.js";
+import { Data, Ending } from "./data.js";
 
 let category = document.querySelector("#category");
 Data.forEach((item) => {
@@ -57,14 +57,7 @@ function clickDetail(event) {
                     console.log(detail.content.length);
 
                     /* 서론 및 본론 리스트 추가 */
-                    detail.content.forEach((text) => {
-                        let box = document.createElement("div"); //텍스트를 감싸는 흰박스
-                        let insideBox = document.createElement("div"); //텍스트
-                        insideBox.innerText = text;
-                        box.appendChild(insideBox);
-                        box.classList.add("content-list-box"); //흰 박스에 클래스 추가
-                        content_list.appendChild(box);
-                    });
+                    makeBoxAndAppend(detail.content,content_list,"content-list-box");
                 }
             });
         }
@@ -75,4 +68,22 @@ function removeAllChild(tag){ // tag의 자식 태그 삭제
     while(tag.hasChildNodes()){
         tag.removeChild(tag.firstChild);
     }
+}
+
+/* 마무리 및 끝인사 */
+function showEndingList(){
+    let ending_list=document.querySelector("#ending-list");
+    makeBoxAndAppend(Ending,ending_list,"content-list-box"); //일단은 태그를 똑같이 해둠
+}
+showEndingList();
+
+function makeBoxAndAppend(list, place,className){
+    list.forEach((text)=>{
+        let box = document.createElement("div"); //텍스트를 감싸는 흰박스
+        let insideBox = document.createElement("div"); //텍스트
+        insideBox.innerText = text;
+        box.appendChild(insideBox);
+        box.classList.add(className); //흰 박스에 클래스 추가
+        place.appendChild(box);
+    })
 }
