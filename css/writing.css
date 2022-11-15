@@ -48,6 +48,23 @@ body {
 .details {
     background-color: var(--category-light-green);
 }
+.detailsChoosen{
+    background-color: var(--category-mid-green);
+}
+
+/* 카테고리 선택 효과*/
+.category:hover{
+    background-color: var(--category-dark-green);
+}
+.category:active{
+    background-color: var(--category-darkdark-green);
+}
+.details:hover{
+    background-color: var(--category-mid-green);
+}
+.details:active{
+    background-color: var(--category-dark-green);
+}
 
 /* 가운데 선택창*/
 #select {
@@ -97,6 +114,12 @@ body {
     margin:5px 10px 0 0;
     place-self: end;
 }
+.button:hover {
+    background-color: var(--button-darkmid-green);
+}
+.button:active {
+    background-color: var(--button-darkdark-green);
+}
 
 /*서론 및 본론*/
 #content{
@@ -131,6 +154,15 @@ body {
     border-radius: var(--radius);
     margin:7px;
 }
+
+/* content-list-box, ending-list-box 선택 효과 */
+.content-list-box:hover, .ending-list-box:hover{
+    background-color: var(--background-mid-white);
+}
+.content-list-box:active, .ending-list-box:active{
+    background-color: var(--category-light-green);
+}
+
 
 /* 우측 글 쓰는 곳*/
 #text label{

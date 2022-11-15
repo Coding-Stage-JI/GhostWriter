@@ -35,9 +35,10 @@ function clickCategory(event) {
             item.childNodes.forEach((i) => i.classList.add("hidden"));
         }
     });
-    event.target.nextElementSibling.childNodes.forEach((item) =>
+    event.target.nextElementSibling.childNodes.forEach((item) =>{
         item.classList.remove("hidden")
-    );
+        item.classList.remove("detailsChoosen")
+    });
 
     /* localStorage에 카테고리 저장 */
     localStorage.setItem("category",event.target.innerText);
@@ -46,6 +47,11 @@ function clickCategory(event) {
 /* 세부 항목 선택 시 => 서론 및 본론을 띄워야 함*/
 let content_list = document.querySelector("#content-list");
 function clickDetail(event) {
+    event.target.parentNode.childNodes.forEach((item)=>{
+        item.classList.remove("detailsChoosen")
+    })
+    event.target.classList.add("detailsChoosen");
+
     let parent = event.target.parentNode.previousSibling.innerText;
     let name = event.target.innerText;
     
