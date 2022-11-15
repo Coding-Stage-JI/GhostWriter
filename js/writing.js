@@ -107,7 +107,7 @@ function clickExample(event){
     if(parent=="content-list-box"){
         localStorage.setItem("content",text);
         const textContent=document.querySelector("#textContent");
-        textContent.value=text.replace("SUBJECT",`${localStorage.getItem("subject")}(${localStorage.getItem("classNum")})`);
+        textContent.value=text.replaceAll("SUBJECT",`${localStorage.getItem("subject")}(${localStorage.getItem("classNum")})`);
     }else if(parent=="ending-list-box"){
         localStorage.setItem("ending",text);
         const textEnding=document.querySelector("#textEnding");
@@ -134,11 +134,11 @@ function onTitleSubmit(event){
             item.details.forEach((detail)=>{
                 if(detail.name==localStorage.getItem("detailName")){
                     let text=detail.title;
-                    textTitle.value=text.replace("SUBJECT",`${subject}(${classNum})`);
+                    textTitle.value=text.replaceAll("SUBJECT",`${subject}(${classNum})`);
 
                     const textContent=document.querySelector("#textContent");
                     if(textContent.value){
-                        textContent.value=localStorage.getItem("content").replace("SUBJECT",`${subject}(${classNum})`);
+                        textContent.value=localStorage.getItem("content").replaceAll("SUBJECT",`${subject}(${classNum})`);
                     }
                 }
             })
