@@ -44,12 +44,14 @@ body {
 }
 .choosen {
     background-color: var(--category-dark-green);
+    border-right: 3px solid var(--category-darkdark-green);
 }
 .details {
     background-color: var(--category-light-green);
 }
 .detailsChoosen{
     background-color: var(--category-mid-green);
+    border-right: 3px solid var(--category-dark-green);
 }
 
 /* 카테고리 선택 효과*/
@@ -69,7 +71,7 @@ body {
 /* 가운데 선택창*/
 #select {
     height: calc(100vh*(14/15));
-    background-color: #e7e9eb;
+    background-color: var(--background-light-gray);
     display: grid;
     grid-template-rows: 1fr 1.5fr 4.5fr 3.5fr;
 }
@@ -163,16 +165,62 @@ body {
     background-color: var(--category-light-green);
 }
 
+/* 우측 */
+#writing{
+    grid-area:2/3/-1/-1;
+    display: grid;
+    grid-template-rows: 1fr 19fr;
+}
+#tab_menu{
+    background-color: var(--background-dark-gray);
+    display: flex;
+    align-items: center ;
+}
+#tab_menu>li{
+    text-align: center;
+    width: 10vw;
+    font-size: 2vh;
+    padding:1vh;
+}
+.tab{
+    border-bottom: 3px solid var(--background-darkdark-gray);
+}
 
-/* 우측 글 쓰는 곳*/
+/* 우측 하단 글 쓰는 곳*/
+#tab_content{
+    justify-self: center;
+    padding: 15px;
+}
+
+/* text 부분*/
 #text label{
     display: block;
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
 }
-#text input{
-    width: 40vw;
+#title-box>label{
+    margin-top: 10px;
 }
+
 textarea{
-    width: 40vw;;
+    width: 45vw;
+    background-color: var(--background-light-white);
+    border-radius: var(--radius);
+    border-color: var(--category-darkdark-green);
+    padding:10px;
+    resize: none;
+}
+
+ /* preview 부분 */
+ #previewBackground{
+    width: 45vw;
+    height: 75vh;
+    margin-top: 10px;
+    background-color: var(--background-light-gray);
+    border-radius: var(--radius);
+    border: 2px solid var(--background-dark-gray);
+    padding:10px;
 }
 
 /* 스크롤바 */

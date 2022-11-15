@@ -76,71 +76,35 @@
         </div>
 
         <div id="writing">
-            <div id="tab_menu">
-                <ul id="tab_list">
-                    <li id="is_on">
-                        <a href="#text">Text</a>
-                        <div id="text">
-                            <div id="title-box">
-                                <label for="textTitle">제목</label>
-                                <input
-                                    type="text"
-                                    name="textTitle"
-                                    id="textTitle"
-                                    placeholder="제목"
-                                />
-                            </div>
-                            <div id="greeting-box">
-                                <label for="textGreeting">인사말</label>
-                                <textarea
-                                    name="textGreeting"
-                                    id="textGreeting"
-                                    rows="4"
-                                    placeholder="인사말"
-                                ></textarea>
-                            </div>
-                            <div id="body-box">
-                                <label for="textContent">서론 및 본론</label>
-                                <textarea
-                                    name="textContent"
-                                    id="textContent"
-                                    rows="15"
-                                    placeholder="서론 및 본론"
-                                ></textarea>
-                            </div>
-                            <div id="closing-box">
-                                <label for="textEnding">마무리 및 끝인사</label>
-                                <textarea
-                                    name="textEnding"
-                                    id="textEnding"
-                                    rows="7"
-                                    placeholder="마무리 및 끝인사"
-                                ></textarea>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#preview">Preview</a>
-                        <div id="preview">미리보기</div>
-                    </li>
-                </ul>
+            <ul id="tab_menu">
+                <li id="textPart" class="tab">Text</li>
+                <li id="previewPart">Preview</li>
+            </ul>
+            <div id="tab_content">
+                <div id="text">
+                    <div id="title-box">
+                        <label for="textTitle">제목</label>
+                        <textarea type="text" name="textTitle" id="textTitle" rows="1" placeholder="제목"></textarea>
+                    </div>
+                    <div id="greeting-box">
+                        <label for="textGreeting">인사말</label>
+                        <textarea name="textGreeting" id="textGreeting" rows="5" placeholder="인사말"></textarea>
+                    </div>
+                    <div id="body-box">
+                        <label for="textContent">서론 및 본론</label>
+                        <textarea name="textContent" id="textContent" rows="17" placeholder="서론 및 본론"></textarea>
+                    </div>
+                    <div id="closing-box">
+                        <label for="textEnding">마무리 및 끝인사</label>
+                        <textarea name="textEnding" id="textEnding" rows="6" placeholder="마무리 및 끝인사"></textarea>
+                    </div>
+                </div>
+                <div id="preview" class="hidden">
+                    <div id="previewBackground">
+                    </div>
+                </div>
             </div>
         </div>
-
-        <script>
-            const tabList = document.querySelectorAll(".tab_menu .list li");
-            for (var i = 0; i < tabList.length; i++) {
-                tabList[i]
-                    .querySelector(".btn")
-                    .addEventListener("click", function (e) {
-                        e.preventDefault();
-                        for (var j = 0; j < tabList.length; j++) {
-                            tabList[j].classList.remove("is_on");
-                        }
-                        this.parentNode.classList.add("is_on");
-                    });
-            }
-        </script>
 
         <script type="module" src="../js/writing.js"></script>
         <script type="module" src="../js/data.js"></script>

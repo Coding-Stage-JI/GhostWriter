@@ -165,3 +165,39 @@ ${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목�
     textGreeting.value=text;
 }
 greetingForm.addEventListener("submit",onGreetingSubmit);
+
+
+/* 오른쪽 파트 */
+const textPart=document.querySelector("#textPart");
+const previewPart=document.querySelector("#previewPart");
+const text=document.querySelector("#text");
+const preview=document.querySelector("#preview");
+
+textPart.addEventListener("click",clickPart);
+previewPart.addEventListener("click",clickPart);
+function clickPart(event){
+    if(event.target.id=="textPart"){
+        textPart.classList.add("tab")
+        previewPart.classList.remove("tab");
+        text.classList.remove("hidden");
+        preview.classList.add("hidden");
+    }else if(event.target.id=="previewPart"){
+        textPart.classList.remove("tab");
+        previewPart.classList.add("tab");
+        text.classList.add("hidden");
+        preview.classList.remove("hidden");
+
+        setEmailContent();
+    }
+}
+
+function setEmailContent(){
+    const title=document.querySelector("#textTitle").value;
+    const greeting=document.querySelector("#textGreeting").value;
+    const content=document.querySelector("#textContent").value;
+    const ending=document.querySelector("#textEnding").value;
+
+    const previeBackground=document.querySelector("#previewBackground");
+    let text=`${title}\n\n\n\n${greeting}\n\n${content}\n\n${ending}`;
+    previeBackground.innerText=text;
+}
