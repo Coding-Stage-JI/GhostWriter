@@ -135,6 +135,11 @@ function onTitleSubmit(event){
                 if(detail.name==localStorage.getItem("detailName")){
                     let text=detail.title;
                     textTitle.value=text.replace("SUBJECT",`${subject}(${classNum})`);
+
+                    const textContent=document.querySelector("#textContent");
+                    if(textContent.value){
+                        textContent.value=localStorage.getItem("content").replace("SUBJECT",`${subject}(${classNum})`);
+                    }
                 }
             })
         }
@@ -163,6 +168,13 @@ function onGreetingSubmit(event){
     let text=`안녕하세요 ${prof} 교수님.
 ${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목을 수강하고 있는 ${major} ${studentNum} ${myName}입니다.`
     textGreeting.value=text;
+
+    const textEnding=document.querySelector("#textEnding");
+    if(textEnding.value){
+        textEnding.value=`${localStorage.getItem("ending")}
+
+${localStorage.getItem("myName")} 올림`;
+    }
 }
 greetingForm.addEventListener("submit",onGreetingSubmit);
 
