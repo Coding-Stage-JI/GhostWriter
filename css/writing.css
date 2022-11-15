@@ -138,6 +138,7 @@ body {
     padding: 10px;
     border-radius: var(--radius);
     margin:5px;
+    line-height: 1.3;
 }
 
 /* 마무리 및 끝인사 */
@@ -155,6 +156,7 @@ body {
     padding:5px;
     border-radius: var(--radius);
     margin:7px;
+    line-height: 1.3;
 }
 
 /* content-list-box, ending-list-box 선택 효과 */
@@ -210,6 +212,7 @@ textarea{
     border-color: var(--category-darkdark-green);
     padding:10px;
     resize: none;
+    line-height: 1.3;
 }
 
  /* preview 부분 */
@@ -221,6 +224,7 @@ textarea{
     border-radius: var(--radius);
     border: 2px solid var(--background-dark-gray);
     padding:10px;
+    line-height: 1.3;
 }
 
 /* 스크롤바 */
