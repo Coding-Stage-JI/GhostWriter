@@ -245,6 +245,35 @@ textarea{
     line-height: 1.3;
 }
 
+#buttons{
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+}
+
+#buttons>div{
+    width:40px;
+    height:40px;
+    background-color: var(--category-mid-green);
+    border: 2px solid var(--category-dark-green);
+    opacity: 0.7;
+    backdrop-filter: blur(30px);
+    border-radius: var(--radius);
+    margin:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buttons>div:hover{
+    background-color: var(--category-dark-green);
+}
+#buttons>div:active{
+    background-color: var(--category-darkdark-green);
+}
+#buttons>div>i{
+    font-size: 25px;
+}
+
 /* 스크롤바 */
 ::-webkit-scrollbar {
     width: 5px;

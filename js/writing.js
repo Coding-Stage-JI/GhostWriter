@@ -138,6 +138,7 @@ function clickExample(event){
 
 ${localStorage.getItem("myName")} 올림`;
     }
+    setEmailContent();
 }
 
 /* title 제출 시 */
@@ -167,7 +168,7 @@ function onTitleSubmit(event){
         }
     })
     
-    
+    setEmailContent();
 }
 titleForm.addEventListener("submit",onTitleSubmit);
 
@@ -203,6 +204,7 @@ ${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목�
 
 ${localStorage.getItem("myName")} 올림`;
     }
+    setEmailContent();
 }
 greetingForm.addEventListener("submit",onGreetingSubmit);
 
@@ -226,18 +228,34 @@ function clickPart(event){
         previewPart.classList.add("tab");
         text.classList.add("hidden");
         preview.classList.remove("hidden");
-
-        setEmailContent();
     }
 }
 
+const title=document.querySelector("#textTitle");
+const greeting=document.querySelector("#textGreeting");
+const content=document.querySelector("#textContent");
+const ending=document.querySelector("#textEnding");
+const previeBackground=document.querySelector("#previewBackground");
 function setEmailContent(){
-    const title=document.querySelector("#textTitle").value;
-    const greeting=document.querySelector("#textGreeting").value;
-    const content=document.querySelector("#textContent").value;
-    const ending=document.querySelector("#textEnding").value;
-
-    const previeBackground=document.querySelector("#previewBackground");
-    let text=`${title}\n\n\n\n${greeting}\n\n${content}\n\n${ending}`;
+    let text=`${title.value}\n\n\n\n${greeting.value}\n\n${content.value}\n\n${ending.value}`;
     previeBackground.innerText=text;
+    localStorage.setItem("totalEmail",text); ///////
+}
+
+const reset=document.querySelector("#reset");
+const copy=document.querySelector("#copy");
+
+reset.addEventListener("click", clickReset);
+copy.addEventListener("click",clickCopy);
+
+function clickReset(){
+    title.value=""
+    greeting.value=""
+    content.value=""
+    ending.value=""
+    previeBackground.innerText=""
+}
+
+function clickCopy(){
+    navigator.clipboard.writeText(localStorage.getItem("totalEmail"));
 }

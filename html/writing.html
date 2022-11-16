@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>GhostWriter</title>
         <link rel="stylesheet" href="../css/writing.css" />
+        <script src="https://kit.fontawesome.com/71814e1ebd.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="header">
@@ -99,7 +100,7 @@
                     </div>
                     <div id="greeting-box">
                         <label for="textGreeting">인사말</label>
-                        <textarea name="textGreeting" id="textGreeting" rows="5" placeholder="인사말"></textarea>
+                        <textarea name="textGreeting" id="textGreeting" rows="3" placeholder="인사말"></textarea>
                     </div>
                     <div id="body-box">
                         <label for="textContent">서론 및 본론</label>
@@ -107,12 +108,17 @@
                     </div>
                     <div id="closing-box">
                         <label for="textEnding">마무리 및 끝인사</label>
-                        <textarea name="textEnding" id="textEnding" rows="5" placeholder="마무리 및 끝인사"></textarea>
+                        <textarea name="textEnding" id="textEnding" rows="3" placeholder="마무리 및 끝인사"></textarea>
                     </div>
                 </div>
                 <div id="preview" class="hidden">
                     <div id="previewBackground">
                     </div>
+                </div>
+
+                <div id="buttons">
+                  <div id="reset"><i class="fa-solid fa-rotate-right"></i></div>
+                  <div id="copy"><i class="fa-regular fa-copy"></i></div>
                 </div>
             </div>
         </div>
