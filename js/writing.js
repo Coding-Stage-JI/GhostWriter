@@ -165,9 +165,15 @@ function onGreetingSubmit(event){
     localStorage.setItem("studentNum",studentNum);
 
     const textGreeting=document.querySelector("#textGreeting");
-    let text=`안녕하세요 ${prof} 교수님.
-${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목을 수강하고 있는 ${major} ${studentNum} ${myName}입니다.`
-    textGreeting.value=text;
+    let text;
+    if (localStorage.getItem("category") == "면담" || localStorage.getItem("category") == "기타") {
+        text = `안녕하세요 ${prof} 교수님.
+${major} ${studentNum} ${myName}입니다.`;
+    } else {
+        text = `안녕하세요 ${prof} 교수님.
+${localStorage.getItem("subject")}(${localStorage.getItem("classNum")}) 과목을 수강하고 있는 ${major} ${studentNum} ${myName}입니다.`;
+    }
+    textGreeting.value = text;
 
     const textEnding=document.querySelector("#textEnding");
     if(textEnding.value){
