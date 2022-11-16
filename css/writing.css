@@ -171,11 +171,11 @@ body {
     line-height: 1.3;
 }
 
-/* content-list-box, ending-list-box 선택 효과 */
-.content-list-box:hover, .ending-list-box:hover{
+/* title-list-box content-list-box, ending-list-box 선택 효과 */
+.content-list-box:hover, .ending-list-box:hover, #title-list-box:hover{
     background-color: var(--background-mid-white);
 }
-.content-list-box:active, .ending-list-box:active{
+.content-list-box:active, .ending-list-box:active, #title-list-box:active{
     background-color: var(--category-light-green);
 }
 
