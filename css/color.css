@@ -1,8 +1,19 @@
 :root {
     --main-light-green: #dceae8;
+
     --button-dark-green: #5b7e79;
+    --button-darkmid-green:#4b716b;
     --button-darkdark-green: #3b635d;
+
+    --category-darkdark-green:#9cb4b0;
     --category-dark-green: #bccfcc;
+    --category-mid-green:#DCEAE8;
     --category-light-green: #e3eeed;
+
+    --background-darkdark-gray:#b8bcc2;
     --background-dark-gray: #cfd3d6;
+    --background-light-gray:#e7e9eb;
+
+    --background-light-white: #fcfdfd;
+    --background-mid-white:#eaf2f1;
 }

@@ -1,51 +1,241 @@
 @import "reset.css";
 @import "color.css";
 
-body{
+:root{
+    --button-radius:5px;
+    --radius:7px;
+}
+
+body {
     display: grid;
     width: 100vw;
     height: 100vh;
     grid-template-rows: 1fr 14fr;
-    grid-template-columns: 1.2fr 3.8fr 5fr;
+    grid-template-columns: 1fr 4fr 5fr; 
 }
 
 /* 헤더 */
-#header{
+#header {
     background-color: var(--main-light-green);
     grid-area: 1/1/2/-1;
     display: flex;
     align-items: center;
 }
-#header>img{
+#header > img {
     padding: 0 30px;
 }
-#logo{
+#logo {
     font-weight: 400;
     font-size: 3vh;
 }
 
 /* 좌측 카테고리*/
-#categories>h2{
+#categories > h2 {
     padding: 1vh;
     font-size: 3vh;
-    height: 5vh;  
+    height: 5vh;
 }
-#category li{
+#category li {
     padding: 1vh;
     font-size: 2vh;
-    
 }
-.hidden{
+.hidden {
     display: none;
 }
-.choosen{
+.choosen {
+    background-color: var(--category-dark-green);
+    border-right: 3px solid var(--category-darkdark-green);
+}
+.details {
+    background-color: var(--category-light-green);
+}
+.detailsChoosen{
+    background-color: var(--category-mid-green);
+    border-right: 3px solid var(--category-dark-green);
+}
+
+/* 카테고리 선택 효과*/
+.category:hover{
     background-color: var(--category-dark-green);
 }
-.details{
-    background-color: var(--category-light-green);
+.category:active{
+    background-color: var(--category-darkdark-green);
+}
+.details:hover{
+    background-color: var(--category-mid-green);
+}
+.details:active{
+    background-color: var(--category-dark-green);
 }
 
 /* 가운데 선택창*/
-#select{
-    background-color: #E7E9EB;
+#select {
+    height: calc(100vh*(14/15));
+    background-color: var(--background-light-gray);
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 4.5fr 3.5fr;
+}
+#select>div{
+    padding:10px
+}
+#select p{
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 5px;
+}
+
+/* 제목 */
+#title-form{
+    display:grid;    
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+}
+#title-form>input{
+    grid-area: 2/2/-1/-1;
+}
+
+/* 인사말 */
+#greeting-form{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    place-items: center;
+}
+#greeting-form>input{
+    grid-area: 3/2/-1/-1;
+}
+
+/* 제목 and 인사말 button */
+.button{
+    background-color:var(--button-dark-green);
+    border:0;
+    border-radius: var(--button-radius);
+    color: white;
+    width: 100px;
+    margin:5px 10px 0 0;
+    place-self: end;
+}
+.button:hover {
+    background-color: var(--button-darkmid-green);
+}
+.button:active {
+    background-color: var(--button-darkdark-green);
+}
+
+/*서론 및 본론*/
+#content{
+    overflow-y: auto;
+}
+#content-list{
+    overflow-y: auto;
+    background-color: var(--background-dark-gray);
+    border-radius: var(--radius);
+    margin: 5px;
+}
+.content-list-box {
+    background-color: var(--background-light-white);
+    padding: 10px;
+    border-radius: var(--radius);
+    margin:5px;
+    line-height: 1.3;
+}
+
+/* 마무리 및 끝인사 */
+#ending{
+    overflow-y: auto;
+}
+#ending-list{
+    overflow-y: auto;
+    background-color: var(--background-dark-gray);
+    border-radius: var(--radius);
+    margin: 10px;
+}
+.ending-list-box{
+    background-color: var(--background-light-white);
+    padding:5px;
+    border-radius: var(--radius);
+    margin:7px;
+    line-height: 1.3;
+}
+
+/* content-list-box, ending-list-box 선택 효과 */
+.content-list-box:hover, .ending-list-box:hover{
+    background-color: var(--background-mid-white);
+}
+.content-list-box:active, .ending-list-box:active{
+    background-color: var(--category-light-green);
+}
+
+/* 우측 */
+#writing{
+    grid-area:2/3/-1/-1;
+    display: grid;
+    grid-template-rows: 1fr 19fr;
+}
+#tab_menu{
+    background-color: var(--background-dark-gray);
+    display: flex;
+    align-items: center ;
+}
+#tab_menu>li{
+    text-align: center;
+    width: 10vw;
+    font-size: 2vh;
+    padding:1vh;
+}
+.tab{
+    border-bottom: 3px solid var(--background-darkdark-gray);
+}
+
+/* 우측 하단 글 쓰는 곳*/
+#tab_content{
+    justify-self: center;
+    padding: 15px;
+}
+
+/* text 부분*/
+#text label{
+    display: block;
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+#title-box>label{
+    margin-top: 10px;
+}
+
+textarea{
+    width: 45vw;
+    background-color: var(--background-light-white);
+    border-radius: var(--radius);
+    border-color: var(--category-darkdark-green);
+    padding:10px;
+    resize: none;
+    line-height: 1.3;
+}
+
+ /* preview 부분 */
+ #previewBackground{
+    width: 45vw;
+    height: 75vh;
+    margin-top: 10px;
+    background-color: var(--background-light-gray);
+    border-radius: var(--radius);
+    border: 2px solid var(--background-dark-gray);
+    padding:10px;
+    line-height: 1.3;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #eeeeee;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--background-dark-gray);
+    border-radius: 5px;
 }
