@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     grid-template-rows: 1fr 14fr;
-    grid-template-columns: 1fr 4fr 5fr; 
+    grid-template-columns: 1.1fr 4fr 5fr; 
 }
 
 /* 헤더 */
@@ -30,6 +30,9 @@ body {
 }
 
 /* 좌측 카테고리*/
+#categories{
+    min-width: calc(21vh);
+}
 #categories > h2 {
     padding: 1vh;
     font-size: 3vh;
@@ -85,6 +88,9 @@ body {
 }
 
 /* 제목 */
+#title{
+    min-height: 10vh;
+}
 #title-form{
     display:grid;    
     grid-template-columns: repeat(2,1fr);
@@ -94,18 +100,7 @@ body {
 #title-form>input{
     grid-area: 2/2/-1/-1;
 }
-#title-list{
-    overflow-y: auto;
-    background-color: var(--background-dark-gray);
-    border-radius: var(--radius);
-    margin: 10px;
-}
-#title-list-box{
-    background-color: var(--background-light-white);
-    padding:5px;
-    border-radius: var(--radius);
-    margin:5px;
-}
+
 
 /* 인사말 */
 #greeting-form{
@@ -139,36 +134,32 @@ body {
 #content{
     overflow-y: auto;
 }
-#content-list{
-    overflow-y: auto;
-    background-color: var(--background-dark-gray);
-    border-radius: var(--radius);
-    margin: 5px;
-}
-.content-list-box {
-    background-color: var(--background-light-white);
-    padding: 10px;
-    border-radius: var(--radius);
-    margin:5px;
-    line-height: 1.3;
-}
+
 
 /* 마무리 및 끝인사 */
 #ending{
     overflow-y: auto;
 }
-#ending-list{
+
+/* item 요소들*/
+#title-list, #content-list, #ending-list{
     overflow-y: auto;
     background-color: var(--background-dark-gray);
     border-radius: var(--radius);
     margin: 10px;
 }
-.ending-list-box{
+
+
+#title-list-box, .content-list-box, .ending-list-box{
     background-color: var(--background-light-white);
     padding:5px;
     border-radius: var(--radius);
-    margin:7px;
+    margin:5px;
     line-height: 1.3;
+}
+#ending-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
 }
 
 /* title-list-box content-list-box, ending-list-box 선택 효과 */
@@ -202,6 +193,7 @@ body {
 
 /* 우측 하단 글 쓰는 곳*/
 #tab_content{
+    min-width: calc(45vw);
     justify-self: center;
     height: 85vh;
     padding: 15px;
@@ -223,7 +215,7 @@ body {
 }
 
 textarea{
-    width: 45vw;
+    width: 43vw;
     background-color: var(--background-light-white);
     border-radius: var(--radius);
     border-color: var(--category-darkdark-green);
@@ -233,9 +225,9 @@ textarea{
     font-size: 1.1em;
 }
 
- /* preview 부분 */
- #previewBackground{
-    width: 45vw;
+/* preview 부분 */
+#previewBackground{
+    width: 43vw;
     height: 75vh;
     margin-top: 10px;
     background-color: var(--background-light-gray);
@@ -245,12 +237,12 @@ textarea{
     line-height: 1.3;
 }
 
+/* reset, copy 버튼*/
 #buttons{
     position: absolute;
-    bottom: 35px;
+    bottom: 25px;
     right: 15px;
 }
-
 #buttons>div{
     width:40px;
     height:40px;
