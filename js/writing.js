@@ -57,13 +57,14 @@ function clickDetail(event) {
     
     /* localStorage에 세부항목 저장 */
     localStorage.setItem("detailName",name);
-
     /* 서론 및 본론 리스트가 존재하는 경우 삭제하고 추가해야함 */
     removeAllChild(content_list);
     Data.forEach((item) => {
         if (item.category == parent) {
             item.details.forEach((detail) => {
                 if (detail.name == name) {
+                    /* 제목 저장해두기 */
+                    localStorage.setItem("title",detail.title);
                     /* 서론 및 본론 리스트 추가 */
                     makeBoxAndAppend(detail.content,content_list,"content-list-box");
                 }
@@ -72,6 +73,28 @@ function clickDetail(event) {
     });
 
     showEndingList();
+
+    /* 제목 부분 판단하자 */
+    const title1=document.querySelector("#title1");
+    const title2=document.querySelector("#title2");
+    const titleListBox=document.querySelector("#title-list-box");
+    let category=localStorage.getItem("category");
+    if(category=="면담" || name=="추천서 요청" || name=="기타"){
+        title1.classList.add("hidden");
+        titleListBox.innerText=localStorage.getItem("title");
+        title2.classList.remove("hidden");
+    }else{
+        title1.classList.remove("hidden");
+        title2.classList.add("hidden");
+    }
+
+}
+
+const titleList=document.querySelector("#title-list");
+const textTitle=document.querySelector("#textTitle");
+titleList.addEventListener("click",clickTitle2);
+function clickTitle2(){
+    textTitle.value=localStorage.getItem("title");
 }
 
 function removeAllChild(tag){ // tag의 자식 태그 삭제
@@ -128,7 +151,6 @@ function onTitleSubmit(event){
     localStorage.setItem("subject",subject);
     localStorage.setItem("classNum",classNum);
 
-    const textTitle=document.querySelector("#textTitle");
     Data.forEach((item)=>{
         if(item.category==localStorage.getItem("category")){
             item.details.forEach((detail)=>{

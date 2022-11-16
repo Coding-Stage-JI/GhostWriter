@@ -94,6 +94,18 @@ body {
 #title-form>input{
     grid-area: 2/2/-1/-1;
 }
+#title-list{
+    overflow-y: auto;
+    background-color: var(--background-dark-gray);
+    border-radius: var(--radius);
+    margin: 10px;
+}
+#title-list-box{
+    background-color: var(--background-light-white);
+    padding:5px;
+    border-radius: var(--radius);
+    margin:5px;
+}
 
 /* 인사말 */
 #greeting-form{
