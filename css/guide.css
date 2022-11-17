@@ -1,0 +1,89 @@
+@import "reset.css";
+@import "color.css";
+
+/* 헤더 */
+.header{
+    display: flex;
+    z-index: 2;
+    justify-content: space-between;
+    background-color: var(--main-light-green);
+    grid-area: 1/1/2/-1;
+    align-items: center;  
+    
+}
+
+.header>img{
+    padding: 0 30px;
+}
+
+.header a{
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+#logo{
+    font-weight: 400;
+    font-size: 3vh;
+    text-align: center;
+}
+/*메인*/
+
+#main{
+    padding: 30px;
+    line-height: normal;
+    display: block;
+    margin: 0 -5px;
+}
+
+
+#main h1{
+    font-size: 27px;
+    font-weight: bold;
+}
+
+#box{
+    text-align: center;
+    border: 1.5px gray solid;
+} 
+
+
+/*오른쪽*/
+
+.header__nav-item {
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .header__nav-item a {
+    display: inline-block;
+    height: 72px;
+    line-height: 72px;
+    text-decoration: none;
+    color: black;
+    padding: 0 0.8em;
+  } 
+
+.header__nav-item:last-child {
+    margin-right: 1.6em;
+}
+
+.header__nav-item::after {
+content: '';
+position: absolute;
+
+
+bottom: 0px;
+left: 50%;
+width: 0;
+height: 0;
+background-color: var( --button-dark-green);
+transition: all 350ms;
+}
+
+.header__nav-item:hover::after {
+    left: 0;
+    width: 100%;
+    height: 8px;
+}
