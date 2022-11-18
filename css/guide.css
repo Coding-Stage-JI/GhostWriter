@@ -61,11 +61,12 @@ body {
 
   .header__nav-item a {
     display: inline-block;
-    height: 72px;
-    line-height: 72px;
+    height: 5vh;
+    line-height: 4vh;
     text-decoration: none;
     color: black;
     padding: 0 0.8em;
+    padding:1vh;
   } 
 
 .header__nav-item:last-child {
