@@ -2,14 +2,13 @@
 
 **Coding Stage 2022-2학기 미니 프로젝트 - GhostWriter**  
 교수님께 이메일을 보내는데 어려움을 겪는 대학생을 위한 문구 추천 웹 서비스  
-Web site link : https://coding-stage-ji.github.io/GenEmail/html/home.html
+Web site link : https://coding-stage-ji.github.io/GhostWriter/html/home.html
 
 ## 요약
 
 -   참여자 : 양가연 ([@gayeon7877](https://github.com/gayeon7877)), 임하형 ([@hahyeong](https://github.com/hahyeong)), 이진경 ([@dooli1971039](https://github.com/dooli1971039))
 -   개발 언어: HTML, CSS, JavaScript
 -   개발 기간 : 2022.11.12 ~ 2022.11.18 (1주일)
-    ​
 
 ## 프로젝트 소개
 
